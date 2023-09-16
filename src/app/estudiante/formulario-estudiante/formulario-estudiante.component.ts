@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { crearEstudisnte } from '../interfaces/estudiante.interface';
+import { crearEstudisnte, estudiante } from '../interfaces/estudiante.interface';
 
 @Component({
   selector: 'app-formulario-estudiante',
@@ -11,6 +11,10 @@ export class FormularioEstudianteComponent implements OnInit {
 
   @Output()
   enviarFormulario = new EventEmitter<crearEstudisnte>();
+
+  @Input()
+  modelo:estudiante
+
   constructor(private formBuilder:FormBuilder) { }
 
   form:FormGroup
@@ -24,13 +28,21 @@ export class FormularioEstudianteComponent implements OnInit {
         {validators: [Validators.required]}],
       direccion:['',Validators.required],
       curso:['',Validators.required]
-  })
+
+
+      })
+      if(this.modelo !== undefined){
+        this.form.patchValue(this.modelo)
+
+      }
+  }
+
+  onSubmit(){
+    this.enviarFormulario.emit(this.form.value)
+  }
 
 
 }
 
-onSubmit(){
-  this.enviarFormulario.emit(this.form.value)
-}
 
-}
+
