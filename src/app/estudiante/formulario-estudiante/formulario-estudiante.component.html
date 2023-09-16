@@ -1,0 +1,48 @@
+
+<form (submit)="onSubmit()" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input formControlName="nombre" matInput>
+    <mat-error>El nombre es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Segundo Nombre (opcional)</mat-label>
+    <input formControlName="segundoNombre" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Primer apellido</mat-label>
+    <input formControlName="apellido1" matInput>
+    <mat-error>El apellido es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Segundo Apellido (opcional)</mat-label>
+    <input formControlName="apellido2" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Edad</mat-label>
+    <input type="number" formControlName="edad" matInput min="1">
+    <mat-error>Edad obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Direccion</mat-label>
+    <input formControlName="direccion" matInput>
+    <mat-error>Direccion requerida</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Curso</mat-label>
+    <input formControlName="curso" matInput>
+    <mat-error>Curso requerida</mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" [disabled]="form.invalid">
+    Guardar
+  </button>
+
+  <a mat-stroked-button routerLink="/landingpage">Cancelar</a>
+</form>
