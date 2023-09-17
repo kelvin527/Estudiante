@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { crearMestro, maestroDto } from '../interfaces/maestro.interface';
 
 @Component({
   selector: 'app-editar-maestro',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarMaestroComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  modelo:maestroDto={
+    id:1, nombre:'milca',segundoNombre:'meralis',apellido1:'robles',apellido2:'sanchez',
+    edad:26,direccion:'sector puerto rico',materia1:'contabilidad'
   }
 
+  constructor() { }
+  ngOnInit() {
+  }
+  guardar(eve:crearMestro){
+    console.log( eve);
+  }
 }

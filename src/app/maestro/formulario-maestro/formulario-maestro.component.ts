@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { crearMestro } from '../interfaces/maestro.interface';
+import { crearMestro, maestroDto } from '../interfaces/maestro.interface';
 
 @Component({
   selector: 'app-formulario-maestro',
@@ -13,7 +13,8 @@ export class FormularioMaestroComponent implements OnInit {
 
   @Output()
   public enviarMestro = new EventEmitter<crearMestro>();
-
+  @Input()
+  modelo:maestroDto
 
   form:FormGroup
   ngOnInit() {
@@ -28,6 +29,9 @@ export class FormularioMaestroComponent implements OnInit {
       materia2:'',
       materia3:'',
     })
+    if(this.modelo !==undefined){
+      this.form.patchValue(this.modelo)
+    }
   }
   onSubmit(){
     this.enviarMestro.emit(this.form.value)
