@@ -10,6 +10,10 @@ import { GmaterialModule } from './material/gmaterial/gmaterial.module';
 import { CrearEstudianteComponent } from './estudiante/crear-estudiante/crear-estudiante.component';
 import { EditarEstudianteComponent } from './estudiante/editar-estudiante/editar-estudiante.component';
 import { FormularioEstudianteComponent } from './estudiante/formulario-estudiante/formulario-estudiante.component';
+import { MenuComponent } from './menu/menu.component';
+import { FormularioMaestroComponent } from './maestro/formulario-maestro/formulario-maestro.component';
+import { CrearMaestroComponent } from './maestro/crear-maestro/crear-maestro.component';
+import { EditarMaestroComponent } from './maestro/editar-maestro/editar-maestro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { FormularioEstudianteComponent } from './estudiante/formulario-estudiant
       CrearEstudianteComponent,
       EditarEstudianteComponent,
       LandingPageComponent,
-      FormularioEstudianteComponent
+      FormularioEstudianteComponent,
+      MenuComponent,
+      FormularioMaestroComponent,
+      CrearMaestroComponent,
+      EditarMaestroComponent
    ],
   imports: [
     BrowserModule,

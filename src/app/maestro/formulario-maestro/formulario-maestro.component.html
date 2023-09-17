@@ -1,0 +1,59 @@
+<form (submit)="onSubmit()" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input formControlName="nombre" matInput>
+    <mat-error>El nombre es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Segundo nombre (opcional) </mat-label>
+    <input formControlName="segundoNombre" matInput>
+    <mat-error>El nombre es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Primer apellido</mat-label>
+    <input formControlName="apellido1" matInput>
+    <mat-error>El primer apellido es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Segundoapellido (opcional)</mat-label>
+    <input formControlName="apellido2" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Edad</mat-label>
+    <input formControlName="edad" matInput type="number">
+    <mat-error>La edad es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Direccion</mat-label>
+    <input formControlName="direccion" matInput>
+    <mat-error>La direccion es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Primera materia</mat-label>
+    <input formControlName="materia1" matInput>
+    <mat-error>La primera materia es obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Segunda materia</mat-label>
+    <input formControlName="materia2" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Tercera materia</mat-label>
+    <input formControlName="materia3" matInput>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary"  [disabled]="form.invalid" >
+    Guardar Datos
+  </button>
+  <a mat-stroked-button >
+    Cancelar
+  </a>
+</form>
